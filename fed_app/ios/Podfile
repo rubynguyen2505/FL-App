@@ -1,0 +1,23 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '12.0'
+
+# Ensure Flutter environment is loaded before using Flutter-specific pod installation
+flutter_root = File.expand_path('..', File.dirname(__FILE__))
+load File.join(flutter_root, 'ios', 'Flutter', 'podhelper.rb')
+
+target 'Runner' do
+  # Enable dynamic frameworks to properly link TensorFlow Lite
+  use_frameworks! :linkage => :dynamic
+
+  # Pods for Runner
+  pod 'TensorFlowLiteSwift'
+  pod 'TensorFlowLiteC'
+
+  # Ensure Flutter dependencies are installed
+  flutter_install_all_ios_pods(File.dirname(File.realpath(__FILE__)))
+
+  target 'RunnerTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+end
