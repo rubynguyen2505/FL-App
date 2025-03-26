@@ -32,7 +32,6 @@ class _FederatedLearningDemoState extends State<FederatedLearningDemo> {
   @override
   void initState() {
     super.initState();
-    //loadModel();
   }
 
   // Load the model when the app starts
@@ -44,24 +43,6 @@ class _FederatedLearningDemoState extends State<FederatedLearningDemo> {
   }
 
   void federatedLearning() async {
-    // for (int round = 1; round <= 100; round++) {
-    //   print("Round $round: Starting federated learning update...");
-
-    //   _model.localUpdate();
-
-    //   String sendResponse = await _model.sendWeightsToServer(_model.modelWeights!);
-
-    //   String receiveResponse = await _model.receiveAggregatedModel();
-
-    //   setState(() {
-    //     _status = "Round $round: $sendResponse, $receiveResponse";
-    //     _aggregatedWeights = receiveResponse;
-    //   });
-
-    //   Random random = Random();
-
-    //   await Future.delayed(Duration(seconds: random.nextInt(8) + 1));
-    // }'
     loadModel();
   }
 
